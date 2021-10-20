@@ -27,7 +27,8 @@ function deepClone(obj) {
   }
   return cloneObj
 }
-
+let arr = [1,2,3,4]
+deepClone(arr)
 // JSON.parse(JSON.stringify()) 实现数组或对象深拷贝,但不能处理函数和正则
 let arr = [1, 3, {
   username: ' kobe'
