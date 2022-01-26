@@ -16,3 +16,22 @@ var num2 = function(nums, target) {
 // （1）get() 方法用来获取一个 Map 对象中指定的元素。
 // （2）set() 方法为Map对象添加一个指定键（key）和值（value）的新元素。
 // （3）has() 返回一个bool值，用来表明map 中是否存在指定元素。
+
+
+const myPromise = Promise.resolve(Promise.resolve("Promise!"));
+
+function funcOne() {
+	myPromise.then(res => res).then(res => console.log(res));
+	setTimeout(() => console.log("Timeout!"), 0);
+	console.log("Last line!");
+}
+
+async function funcTwo() {
+	const res = await myPromise;
+	console.log(await res,'z');
+	setTimeout(() => console.log("Timeout!1"), 0)
+	console.log("Last line!");
+}
+
+funcOne();
+funcTwo();
